@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "string": "cpp",
-        "initializer_list": "cpp"
-    },
-    "ros.distro": "humble"
-}
