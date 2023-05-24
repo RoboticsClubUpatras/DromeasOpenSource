@@ -55,13 +55,13 @@ static const float PID_KI = 0.0;
 static const float PID_KD = 0.65;
 
 // Maximum Robot Speed.
-static const int MAX_PWM = 155; // Max PWM output to protect the motors.
+static const int MAX_PWM = 120; // Max PWM output to protect the motors.
 
 // Main Loop Frequency.
 static const unsigned int LOOP_FREQUENCY = 3U; // Loop Frequency in ms.
 
 // Speed variables.
-static const int PWM_CENTERED = 95; // Max PWM for linear velocity when line is centered.
+static const int PWM_CENTERED = 80; // Max PWM for linear velocity when line is centered.
 
 static const int PWM_90DEG_ANGLE = 170; // Angular velocity used in right or left 90 deg angle.
 
