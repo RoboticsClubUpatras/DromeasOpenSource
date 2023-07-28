@@ -68,34 +68,37 @@ static const int PWM_90DEG_ANGLE = 170; // Angular velocity used in right or lef
 //-----------------------PIN DEFINITIONS-----------------------------//
 
 // IR Sensors.
-static const uint8_t pin_QTR_1 = 21U;
-static const uint8_t pin_QTR_2 = 20U;
-static const uint8_t pin_QTR_3 = 19U;
-static const uint8_t pin_QTR_4 = 18U;
-static const uint8_t pin_QTR_5 = 17U;
-static const uint8_t pin_QTR_6 = 16U;
-static const uint8_t pin_QTR_7 = 15U;
-static const uint8_t pin_QTR_8 = 14U;
+static const uint8_t pin_QTR_1 = A0;
+static const uint8_t pin_QTR_2 = A1;
+static const uint8_t pin_QTR_3 = A2;
+static const uint8_t pin_QTR_4 = A3;
+static const uint8_t pin_QTR_5 = A4;
+static const uint8_t pin_QTR_6 = A5;
+static const uint8_t pin_QTR_7 = A6;
+static const uint8_t pin_QTR_8 = A7;
 
 // Motor Driver.
-static const uint8_t pin_MOTOR_DRIVER_LEFT_PWM = 3U;
-static const uint8_t pin_MOTOR_DRIVER_RIGHT_PWM = 4U;
-static const uint8_t pin_MOTOR_DRIVER_LEFT_IN_1 = 6U;
-static const uint8_t pin_MOTOR_DRIVER_LEFT_IN_2 = 5U;
-static const uint8_t pin_MOTOR_DRIVER_STBY = 2U;
-static const uint8_t pin_MOTOR_DRIVER_RIGHT_IN_1 = 7U;
-static const uint8_t pin_MOTOR_DRIVER_RIGHT_IN_2 = 8U;
+static const uint8_t pin_MOTOR_DRIVER_LEFT_PWM = 13U; //D10
+static const uint8_t pin_MOTOR_DRIVER_RIGHT_PWM = 14U; //D11
+
+static const uint8_t pin_MOTOR_DRIVER_LEFT_IN_1 = 12U; //D9
+static const uint8_t pin_MOTOR_DRIVER_LEFT_IN_2 = 11U; //D8
+
+static const uint8_t pin_MOTOR_DRIVER_RIGHT_IN_1 = 10U; //D7
+static const uint8_t pin_MOTOR_DRIVER_RIGHT_IN_2 = 9U; //D6
+
+// static const uint8_t pin_MOTOR_DRIVER_STBY = 2U;
 
 // LEDs.
-static const uint8_t pin_LED_RED = 9U;
-static const uint8_t pin_LED_GREEN = 11U;
-static const uint8_t pin_LED_BLUE = 10U;
+// static const uint8_t pin_LED_RED = 9U;
+// static const uint8_t pin_LED_GREEN = 11U;
+// static const uint8_t pin_LED_BLUE = 10U;
 
 // Push Button.
-static const uint8_t pin_PUSH_BTN = 12U; // Normally LOW
+static const uint8_t pin_PUSH_BTN = 5U; //D2 Normally LOW
 
 // Buzzer.
-static const uint8_t pin_BUZZER = 22U;
+// static const uint8_t pin_BUZZER = 22U;
 
 // Available General Purpose Pins
 // 13

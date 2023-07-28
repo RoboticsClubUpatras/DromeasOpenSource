@@ -20,8 +20,8 @@
 //                             http://robotics-club.upatras.gr/                               //
 //                          https://www.facebook.com/Polymechanon/                            //
 //                                                                                            //
-// - Microcontroller: Teensy 3.2                                                              //
-// - Motor Driver   : TB6612FNG(Pololu)                                                       //
+// - Microcontroller: Arduino Nano                                                            //
+// - Motor Driver   : L298N                                                                   //
 // - Line Sensors   : QTR-8RC or QTR-8A(Pololu)                                               //
 // - Line Sensors Library: QTRSensors.h from Pololu modified to work with Teensy              //
 //                                                                                            //
@@ -223,12 +223,12 @@ void commandMotors(int v, int th)
         digitalWrite(pin_MOTOR_DRIVER_LEFT_IN_2, HIGH);
     }
     if (pwmRight <= 0) {
-        digitalWrite(pin_MOTOR_DRIVER_RIGHT_IN_1, LOW);
-        digitalWrite(pin_MOTOR_DRIVER_RIGHT_IN_2, HIGH);
-    }
-    else {
         digitalWrite(pin_MOTOR_DRIVER_RIGHT_IN_1, HIGH);
         digitalWrite(pin_MOTOR_DRIVER_RIGHT_IN_2, LOW);
+    }
+    else {
+        digitalWrite(pin_MOTOR_DRIVER_RIGHT_IN_1, LOW);
+        digitalWrite(pin_MOTOR_DRIVER_RIGHT_IN_2, HIGH);
     }
     // Write the values to the motors
     analogWrite(pin_MOTOR_DRIVER_LEFT_PWM, abs(pwmLeft));
@@ -273,29 +273,27 @@ int main()
     pinMode(pin_MOTOR_DRIVER_LEFT_IN_2, OUTPUT);
     pinMode(pin_MOTOR_DRIVER_RIGHT_IN_1, OUTPUT);
     pinMode(pin_MOTOR_DRIVER_RIGHT_IN_2, OUTPUT);
-    pinMode(pin_MOTOR_DRIVER_STBY, OUTPUT);
 
     // LEDs
-    pinMode(pin_LED_RED, OUTPUT);
-    pinMode(pin_LED_BLUE, OUTPUT);
-    pinMode(pin_LED_GREEN, OUTPUT);
+    // pinMode(pin_LED_RED, OUTPUT);
+    // pinMode(pin_LED_BLUE, OUTPUT);
+    // pinMode(pin_LED_GREEN, OUTPUT);
 
     // Buzzer
-    pinMode(pin_BUZZER, OUTPUT);
+    // pinMode(pin_BUZZER, OUTPUT);
 
     // Push Button
     pinMode(pin_PUSH_BTN, INPUT);
 
-    digitalWrite(pin_MOTOR_DRIVER_STBY, HIGH); // Motor Driver State - Active
     delay(1500); // Wait before beginning calibration.
 
-    digitalWrite(pin_LED_BLUE, HIGH); // Start Calibration.
+    // digitalWrite(pin_LED_BLUE, HIGH); // Start Calibration.
 
     for (int i = 0; i < 500; i++) // make the calibration take about 10 seconds
     {
         qtrrc.calibrate(); // reads all sensors 10 times at 2500 us per read (i.e. ~25 ms per call)
     }
-    digitalWrite(pin_LED_BLUE, LOW); // calibration over
+    // digitalWrite(pin_LED_BLUE, LOW); // calibration over
 
     // Wait until the pushbutton is pushed to start the robot.
     while (1) {
